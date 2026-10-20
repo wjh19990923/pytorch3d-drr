@@ -7,14 +7,15 @@ renderings**, not a manuscript figure or a new rendering experiment.
 
 | Panels | Historical source | Array / resolution |
 |---|---|---|
-| Pelvis views | Experiment 014, sourced from 002 renderer alignment; DeepFluoro specimen 17-1882, frames 009 and 050 | `images.npz`, `009__Ours` / `050__Ours`; 256 x 256 |
+| Pelvis view | Experiment 014, sourced from 002 renderer alignment; DeepFluoro specimen 17-1882, frame 009 | `images.npz`, `009__Ours`; 256 x 256 |
+| Natural knee (femur only) | Experiment 038, run 038_20261006T075720Z; SiPla SUBN_02 / dkb_01 / image001, original CSV pose | `images_private.npz`, `reference_ours`; 128 x 128, native efficient linear rendering |
 | Femoral / tibial implant | Experiment 119, original alignment check 20261014T111105Z; SIGM_02, C_SIGM_02_ch_sit_01_001 | `0_femur.npz` / `0_tibia.npz`, `silhouette`; 512 x 512 |
 
 Only the author's renderer outputs are selected. No target X-rays, other
 renderers' outputs, source CTs or STL files are exported. These assets precede
 the manuscript layouts. The implant example is the original SIGM_02 check,
 not the later ATTM07/GOLF03/PSLE04 manuscript examples. The bone images are
-historical 014 outputs, not the manuscript's 090 or renderer-branches assets.
+historical 014 and 038 outputs, not the manuscript's 090 or renderer-branches assets.
 
 CT panels use their saved values with per-panel min/max display scaling.
 Surface panels show soft alpha silhouettes, **not attenuation or shaded 3D
@@ -27,7 +28,7 @@ are not a physical scale comparison. Exact input SHA256 values and crops are in
 To rebuild with authorized copies of the historical output archives:
 
 ```sh
-python tools/build_real_gallery.py /path/014/images.npz /path/119/20261014T111105Z
+python tools/build_real_gallery.py /path/014/images.npz /path/119/20261014T111105Z --sipla /path/038/images_private.npz
 ```
 
 The private arrays are deliberately not bundled. Dataset attribution:
@@ -58,3 +59,8 @@ python tools/build_readme_gallery.py
 The gallery tool needs NumPy/matplotlib (`.[examples]`) and prints input SHA256
 values. Floating-point bytes can differ across dependency versions. This is not
 an accuracy benchmark. Original documentation artwork uses the project's MIT license.
+The SiPla panel shows natural femoral bone, not a whole-knee or implant render.
+It uses the original CSV-pose projection, not a selected successful registration.
+The source experiment's failed registrations are not hidden or presented as
+successes: this gallery only illustrates rendering capability. No original
+SiPla pixels or volume data are distributed. No new rendering was run.

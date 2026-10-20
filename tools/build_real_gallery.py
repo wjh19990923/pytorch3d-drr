@@ -18,13 +18,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("bone", type=Path)
     parser.add_argument("implant", type=Path)
+    parser.add_argument("--sipla", type=Path, required=True,
+                        help="Historical 038 images_private.npz; only reference_ours is read")
     parser.add_argument("--output", type=Path, default=Path("docs/assets"))
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     panels = []
     provenance = []
     specs = [(args.bone, "009__Ours", "CT volume / pelvis", "DeepFluoro 17-1882 · frame 009"),
-             (args.bone, "050__Ours", "CT volume / another view", "DeepFluoro 17-1882 · frame 050"),
+             (args.sipla, "reference_ours", "CT volume / natural knee", "SiPla SUBN_02 · femur · dkb_01/001"),
              (args.implant / "0_femur.npz", "silhouette", "STL surface / femoral implant", "CAMS-Knee · SIGM_02"),
              (args.implant / "0_tibia.npz", "silhouette", "STL surface / tibial implant", "CAMS-Knee · SIGM_02")]
     for path, key, title, subtitle in specs:

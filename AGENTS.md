@@ -2,6 +2,10 @@
 
 ## Start here
 
+- README.md is the short entry point; docs/usage.md has full installation,
+  platform caveats, examples and troubleshooting. docs/assets/README.md records
+  gallery provenance. Never substitute a gallery image for a test result.
+
 - Read README.md and docs/geometry.md before changing geometry.
 - Editable source is `src/pytorch3d_drr/*.py`, not generated build directories.
 - The core is a research preview. Do not claim clinical accuracy or benchmark

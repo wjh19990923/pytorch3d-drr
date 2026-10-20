@@ -17,21 +17,21 @@
     "case": "DeepFluoro 17-1882 \u00b7 frame 009"
   },
   {
-    "source_file": "images.npz",
-    "key": "050__Ours",
+    "source_file": "images_private.npz",
+    "key": "reference_ours",
     "shape": [
-      256,
-      256
+      128,
+      128
     ],
-    "sha256": "9ffad7cb2b6b504c5e236ff8bf8b8ec4e976183bd47f35f7ef4ae580b2ac14f4",
+    "sha256": "696725b5997c58c436dc96e70f691ba1bc7663d31299b7f85c0eadeebbb8fc4b",
     "display_crop_yxyx": [
       0,
-      256,
+      128,
       0,
-      256
+      128
     ],
-    "title": "CT volume / another view",
-    "case": "DeepFluoro 17-1882 \u00b7 frame 050"
+    "title": "CT volume / natural knee",
+    "case": "SiPla SUBN_02 \u00b7 femur \u00b7 dkb_01/001"
   },
   {
     "source_file": "0_femur.npz",
