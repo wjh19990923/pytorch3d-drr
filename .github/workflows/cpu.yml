@@ -1,0 +1,35 @@
+name: CPU package and offline demo
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  cpu:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    env:
+      MAX_JOBS: "2"
+      CUDA_VISIBLE_DEVICES: ""
+      FORCE_CUDA: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install --upgrade pip "setuptools>=77" wheel ninja
+          python -m pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install iopath
+          python -m pip install --no-build-isolation "git+https://github.com/facebookresearch/pytorch3d.git@v0.7.9"
+          python -m pip install .
+      - name: Diagnose and test native rendering
+        run: |
+          python -m pytorch3d_drr doctor --json --device cpu
+          python -m unittest discover -s tests -v
+          python -m pytorch3d_drr demo --device cpu --output outputs/demo
+          python tools/check_candidate.py
+          python -m pip wheel --no-deps --no-build-isolation --wheel-dir dist .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-cpu-demo
+          path: outputs/demo/

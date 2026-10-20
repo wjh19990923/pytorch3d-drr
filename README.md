@@ -36,6 +36,31 @@ python -m unittest discover -s tests -v
 
 ## Examples and data
 
+### First run: no dataset required
+
+After installation:
+
+```sh
+python -m pytorch3d_drr doctor --json --device cpu
+python -m pytorch3d_drr demo --device cpu --output outputs/demo
+```
+
+The demo generates a small volume and cube mesh locally, then renders linear,
+exp and surface outputs using the native renderers. It writes raw `.npy`
+arrays, normalized `.pgm` previews and `report.json`. No network access or
+medical files are needed at runtime. The installed `pytorch3d-drr` command
+is equivalent to `python -m pytorch3d_drr`.
+
+Both commands emit JSON on stdout and return a nonzero exit code on failure.
+Diagnostic success does not guarantee rendering success: run both commands.
+Explicit `--device cuda` fails if CUDA is unavailable; `--device auto` permits
+automatic selection. CPU is the CLI default.
+
+Read the [geometry contract](docs/geometry.md), [agent guide](AGENTS.md), and
+[contribution/test guide](CONTRIBUTING.md). CI tests CPU only.
+
+### Real data
+
 See [examples](examples/README.md). Supply data acquired under the respective
 dataset terms. Dataset accessibility does not grant redistribution permission.
 Examples default to CPU; request `--device cuda` explicitly.

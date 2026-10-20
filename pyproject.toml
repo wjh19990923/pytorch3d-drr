@@ -15,5 +15,8 @@ dependencies = ["torch>=2.1", "numpy", "nibabel", "numpy-stl"]
 [project.optional-dependencies]
 examples = ["h5py", "matplotlib"]
 
+[project.scripts]
+pytorch3d-drr = "pytorch3d_drr.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]

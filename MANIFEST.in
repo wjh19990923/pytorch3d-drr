@@ -2,3 +2,5 @@ include README.md LICENSE THIRD_PARTY_NOTICES.md
 recursive-include licenses *.txt
 recursive-include examples *.py *.md
 recursive-include tests *.py
+include AGENTS.md CONTRIBUTING.md
+recursive-include docs *.md

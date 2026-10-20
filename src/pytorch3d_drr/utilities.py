@@ -2,17 +2,16 @@ import torch
 
 
 def determine_device(device=None):
-    if device is None:
+    if device is None or str(device) == "auto":
         if torch.cuda.is_available():
             cuda_idx = torch.cuda.current_device()
             device = torch.device("cuda", cuda_idx)
         else:
             device = torch.device("cpu")
     else:
-        if not torch.cuda.is_available():
-            device = torch.device("cpu")
-        else:
-            device = torch.device(device)
+        device = torch.device(device)
+        if device.type == "cuda" and not torch.cuda.is_available():
+            raise RuntimeError("CUDA requested but unavailable. Use device='cpu' or 'auto'.")
 
     return device
 
