@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+.env
+data/
+outputs/
+*.nii
+*.nii.gz
+*.h5
+*.hdf5
+*.stl
+*.dcm
+*.pt
+*.pth
