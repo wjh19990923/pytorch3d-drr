@@ -4,12 +4,14 @@
 
 [Install](#installation) · [Offline demo](#first-run-no-dataset-required) · [Python example](#python-example) · [Geometry](docs/geometry.md) · [Agent guide](AGENTS.md)
 
-![Native synthetic CPU rendering: linear, exp and surface](docs/assets/synthetic-renderers.png)
+![Real-data examples: two pelvis DRRs and femoral and tibial implant silhouettes](docs/assets/real-renderers.png)
 
-*Existing offline-demo outputs: a synthetic 40 × 30 × 20 mm box at 32 × 32
-pixels. Each panel uses its own raw-value color scale; the lower plots show
-central-row profiles. No medical images, manuscript figures or registration
-benchmarks are used. [Provenance and reproduction](docs/assets/README.md).*
+*Existing native renderer outputs: DeepFluoro pelvis CT projections (left),
+and CAMS-Knee femoral/tibial implant STL silhouettes (right). These are rendered
+images, not input radiographs. Surface panels are cropped and enlarged;
+brightness is scaled per panel. This is a capability gallery, not an accuracy
+comparison. No manuscript figures are reused.
+[Sources, display settings and hashes](docs/assets/README.md).*
 
 **Early research preview — API and examples are still being validated.**
 This is an independent project, not an official PyTorch3D release.
@@ -29,8 +31,9 @@ The package extracts the existing renderer implementation:
   `1 - exp(-0.0192 * integral)`, not transmitted intensity.
 - `Camera`, `Scene`, `AnatomySTL`, `AnatomyCT`: existing geometry API.
 
-No medical images, implant meshes, credentials, checkpoints or experiment logs
-are included. Original contributions use the [MIT license](LICENSE);
+No source medical volumes/radiographs, implant meshes, credentials, checkpoints
+or experiment logs are included. The gallery contains derived renderings only.
+Original contributions use the [MIT license](LICENSE);
 upstream portions retain their [BSD terms and attribution](THIRD_PARTY_NOTICES.md).
 
 ## Installation
@@ -107,6 +110,12 @@ macOS and MPS have not been validated here. Do not infer support from CPU CI.
 
 ### First run: no dataset required
 
+![Offline CPU self-test: synthetic linear, exp and surface outputs](docs/assets/synthetic-renderers.png)
+
+The simple box is an installation self-test, not the main application example.
+It needs no external dataset. The real-data gallery above comes from historical
+research outputs, not a fresh run of the packaged adapters.
+
 After installation:
 
 ```sh
@@ -154,8 +163,9 @@ python examples/volume_deepfluoro.py --data /path/ipcai_2020_full_res_data.h5 --
 
 Replace placeholder paths with your own files. These adapters have not yet
 passed new packaged real-data alignment tests. Their presence does not imply
-reproduction of the research pipeline. We show verified synthetic outputs here,
-not clinical benchmark or manuscript figures.
+reproduction of the research pipeline. The historical real-data gallery shows
+the original renderer's outputs; it does not validate these packaged adapters
+or establish clinical accuracy.
 
 See [examples](examples/README.md). Supply data acquired under the respective
 dataset terms. Dataset accessibility does not grant redistribution permission.

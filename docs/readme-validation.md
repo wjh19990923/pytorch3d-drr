@@ -34,3 +34,14 @@ Existing gallery input SHA256:
 
 Review: documentation checks passed with no blocking findings. Full pose-refiner
 API remains absent and is explicitly not advertised as packaged functionality.
+# Real-data gallery update (2026-10-20)
+
+- Reused saved experiment 014 own-renderer arrays and original experiment 119
+  SIGM_02 silhouettes. No new research rendering or optimization was run.
+- Visually inspected all four gallery panels. Surface crops and independent
+  contrast scaling are disclosed; silhouettes are not described as attenuation.
+- README local-link and native CPU Python-example check: passed.
+- Candidate source/sensitive-pattern scan: passed, no findings (not a guarantee).
+- `git diff --check`: passed. Gallery input hashes are recorded in
+  `assets/real-renderers.json`. Raw arrays remain outside the public repository.
+

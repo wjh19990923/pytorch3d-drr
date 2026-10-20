@@ -1,0 +1,70 @@
+[
+  {
+    "source_file": "images.npz",
+    "key": "009__Ours",
+    "shape": [
+      256,
+      256
+    ],
+    "sha256": "9ffad7cb2b6b504c5e236ff8bf8b8ec4e976183bd47f35f7ef4ae580b2ac14f4",
+    "display_crop_yxyx": [
+      0,
+      256,
+      0,
+      256
+    ],
+    "title": "CT volume / pelvis",
+    "case": "DeepFluoro 17-1882 \u00b7 frame 009"
+  },
+  {
+    "source_file": "images.npz",
+    "key": "050__Ours",
+    "shape": [
+      256,
+      256
+    ],
+    "sha256": "9ffad7cb2b6b504c5e236ff8bf8b8ec4e976183bd47f35f7ef4ae580b2ac14f4",
+    "display_crop_yxyx": [
+      0,
+      256,
+      0,
+      256
+    ],
+    "title": "CT volume / another view",
+    "case": "DeepFluoro 17-1882 \u00b7 frame 050"
+  },
+  {
+    "source_file": "0_femur.npz",
+    "key": "silhouette",
+    "shape": [
+      512,
+      512
+    ],
+    "sha256": "aed9123f2235eeb0cbc6ce1738d6f146ad1e560e54d4526d815de686dce7dd4e",
+    "display_crop_yxyx": [
+      169,
+      359,
+      262,
+      422
+    ],
+    "title": "STL surface / femoral implant",
+    "case": "CAMS-Knee \u00b7 SIGM_02"
+  },
+  {
+    "source_file": "0_tibia.npz",
+    "key": "silhouette",
+    "shape": [
+      512,
+      512
+    ],
+    "sha256": "452fc7d6b66d93d86ff5405b092d08f2fa5580f5f942e8f9711783c91ceb1270",
+    "display_crop_yxyx": [
+      295,
+      445,
+      249,
+      396
+    ],
+    "title": "STL surface / tibial implant",
+    "case": "CAMS-Knee \u00b7 SIGM_02"
+  }
+]
