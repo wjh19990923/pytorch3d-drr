@@ -7,8 +7,6 @@ ETH overview: https://movement.ethz.ch/data-repository/cams-knee-project.html
 
 The overview identifies a freely downloadable example trial. Full datasets and
 implant geometry can have separate terms. We do not bundle or rehost them.
-The three historical local samples have not yet been mapped to the official
-download's file identifiers in this candidate.
 
 Create a JSON file containing:
 
@@ -40,5 +38,6 @@ python examples/volume_deepfluoro.py --data /path/ipcai_2020_full_res_data.h5 --
 python examples/volume_deepfluoro.py --data /path/ipcai_2020_full_res_data.h5 --specimen 17-1882 --frame 000 --mode exp --output outputs/exp.png --device cuda
 ```
 
-Real-data examples require a separate forward-render alignment check before
-release. They have not been run as new GPU experiments during packaging.
+These examples show the rendering path only. The registration workflow used for
+the paper's DeepFluoro tables (Tables 3–4) will be added with its own end-to-end
+check; see [Reproducing the paper](../README.md#reproducing-the-paper).

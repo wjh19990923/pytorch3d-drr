@@ -226,10 +226,10 @@ Check `ok`, `actual_device` and output files. `doctor` checks imports/allocation
 
 ## Scope and limitations
 
-The extracted core is not yet a stable API. The GUI pose-refiner application,
-its optimizer adapters and dataset-specific experimental workflows are not
-included in this first candidate. No equivalence to those complete experiments
-is claimed. Their extraction and parity tests remain pending.
+The API is not yet stable. This release contains the renderers. The pose-refiner
+application, optimizer adapters and dataset-specific registration workflows are
+not included yet; the DeepFluoro workflow of the paper is planned for the next
+release, together with parity tests against the original runs.
 
 Depth sampling now preserves gradients through depth bounds, matching the
 repair used in the experiments. Crop/raster visibility changes are not globally

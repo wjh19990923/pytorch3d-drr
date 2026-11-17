@@ -12,10 +12,8 @@ renderings**, not a manuscript figure or a new rendering experiment.
 | Femoral / tibial implant | Experiment 119, original alignment check 20261014T111105Z; SIGM_02, C_SIGM_02_ch_sit_01_001 | `0_femur.npz` / `0_tibia.npz`, `silhouette`; 512 x 512 |
 
 Only the author's renderer outputs are selected. No target X-rays, other
-renderers' outputs, source CTs or STL files are exported. These assets precede
-the manuscript layouts. The implant example is the original SIGM_02 check,
-not the later ATTM07/GOLF03/PSLE04 manuscript examples. The bone images are
-historical 014 and 038 outputs, not the manuscript's 090 or renderer-branches assets.
+renderers' outputs, source CTs or STL files are exported. These panels are not
+the figures of the paper.
 
 CT panels use their saved values with per-panel min/max display scaling.
 Surface panels show soft alpha silhouettes, **not attenuation or shaded 3D
@@ -25,7 +23,7 @@ generation, pose fitting or intensity-model conversion is applied. Panel sizes
 are not a physical scale comparison. Exact input SHA256 values and crops are in
 [real-renderers.json](real-renderers.json).
 
-To rebuild with authorized copies of the historical output archives:
+To rebuild from the original output archives (not distributed):
 
 ```sh
 python tools/build_real_gallery.py /path/014/images.npz /path/119/20261014T111105Z --sipla /path/038/images_private.npz
