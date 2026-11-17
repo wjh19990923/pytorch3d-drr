@@ -112,7 +112,7 @@ from our experiments; it is not an accuracy benchmark.
 |---|---|---|---|
 | Table 1 | Implant refinement after JTML/NFD initialization, 130 images | [CAMS-Knee](https://cams-knee.orthoload.com/) (provider terms apply) | Surface renderer (`STLRenderer`); JTML/NFD initialization not included |
 | Table 2 | Natural-knee perturbation recovery, 25 subjects | Laboratory data, not public | Volume renderer (`CTRenderer`); data cannot be shared |
-| Table 3 | DeepFluoro registration from shared XVR initial poses, 366 images | [DeepFluoro](https://doi.org/10.7281/T1/IFSXNV) (public) | Volume renderer; similarity metrics, multiscale optimizer and evaluation scripts planned for the next release |
+| Table 3 | DeepFluoro registration from shared XVR initial poses, 366 images | [DeepFluoro](https://doi.org/10.7281/T1/IFSXNV) (public) | Volume renderer; similarity metrics, multiscale optimizer and evaluation scripts to be released upon acceptance |
 | Table 4 | DeepFluoro reference recovery from random starts | DeepFluoro (public) | As for Table 3 |
 
 The exponential mapping in the paper (Eq. 2, μ = 0.0192 mm⁻¹) is
