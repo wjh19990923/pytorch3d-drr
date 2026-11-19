@@ -228,8 +228,8 @@ Check `ok`, `actual_device` and output files. `doctor` checks imports/allocation
 
 The API is not yet stable. This release contains the renderers. The pose-refiner
 application, optimizer adapters and dataset-specific registration workflows are
-not included yet; the DeepFluoro workflow of the paper will be released upon
-acceptance, together with parity tests against the original runs.
+not included yet; the registration code of the paper will be released upon
+acceptance.
 
 Depth sampling now preserves gradients through depth bounds, matching the
 repair used in the experiments. Crop/raster visibility changes are not globally

@@ -38,6 +38,5 @@ python examples/volume_deepfluoro.py --data /path/ipcai_2020_full_res_data.h5 --
 python examples/volume_deepfluoro.py --data /path/ipcai_2020_full_res_data.h5 --specimen 17-1882 --frame 000 --mode exp --output outputs/exp.png --device cuda
 ```
 
-These examples show the rendering path only. The registration workflow used for
-the paper's DeepFluoro tables (Tables 3–4) will be released upon acceptance,
-with its own end-to-end check; see [Reproducing the paper](../README.md#reproducing-the-paper).
+These examples show the rendering path only. The registration code used in
+the paper will be released upon acceptance.

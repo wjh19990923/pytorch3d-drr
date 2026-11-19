@@ -8,7 +8,11 @@
 Renderer code for our ISBI 2027 submission
 *A PyTorch3D-Based Differentiable X-ray Renderer for 2D/3D Registration*.
 
-[Install](#install) · [Quick start](#quick-start) · [Geometry](docs/geometry.md) · [Reproducing the paper](#reproducing-the-paper)
+> **Code release.** This repository contains the renderers. The pose-refinement
+> code used in the paper (similarity metrics, multiscale optimizer and DeepFluoro
+> registration scripts) will be released upon acceptance.
+
+[Install](#install) · [Quick start](#quick-start) · [Geometry](docs/geometry.md)
 
 ![Pelvis DRR, SiPla natural-knee femur DRR and femoral/tibial implant silhouettes](docs/assets/real-renderers.png)
 
@@ -23,8 +27,6 @@ Contrast and crop differ across panels. [Provenance](docs/assets/README.md).*
 | STL / `STLRenderer` | Soft alpha silhouette, not mesh X-ray attenuation |
 
 Research software, not a clinical device or an official PyTorch3D release.
-This repository contains the renderers; see [Reproducing the paper](#reproducing-the-paper)
-for the registration experiments.
 
 ## Install
 
@@ -105,18 +107,6 @@ print(linear.shape, exp.shape, silhouette.shape)  # each: (1,32,32)
 Connect the projection tensor to your loss and optimizer, with your own pose
 parameterization and rotation centre. The gallery above shows saved renderings
 from our experiments; it is not an accuracy benchmark.
-
-## Reproducing the paper
-
-| Paper table | Experiment | Data | In this repository |
-|---|---|---|---|
-| Table 1 | Implant refinement after JTML/NFD initialization, 130 images | [CAMS-Knee](https://cams-knee.orthoload.com/) (provider terms apply) | Surface renderer (`STLRenderer`); JTML/NFD initialization not included |
-| Table 2 | Natural-knee perturbation recovery, 25 subjects | Laboratory data, not public | Volume renderer (`CTRenderer`); data cannot be shared |
-| Table 3 | DeepFluoro registration from shared XVR initial poses, 366 images | [DeepFluoro](https://doi.org/10.7281/T1/IFSXNV) (public) | Volume renderer; similarity metrics, multiscale optimizer and evaluation scripts to be released upon acceptance |
-| Table 4 | DeepFluoro reference recovery from random starts | DeepFluoro (public) | As for Table 3 |
-
-The exponential mapping in the paper (Eq. 2, μ = 0.0192 mm⁻¹) is
-`decay_type="exp"`; the linear mapping is `decay_type="linear"`.
 
 ## Development
 
